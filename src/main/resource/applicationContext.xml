@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+    <!--此处犯了重复注入的错误，控制台输出找不到唯一的bean-->
+    <!-- 配置component所在的包，自动加载需要管理的Bean -->
+        <!--<context:component-scan base-package="top.byk.service.*" />-->
+        <!--<context:component-scan base-package="top.byk.dao" />-->
+
+
+        <!--因为在web.xml中直接引入了spring-mybatis.xml文件，因此这个文件没用上-->
+      <import resource="classpath:spring-mybatis.xml" />
+
+
+
+</beans>

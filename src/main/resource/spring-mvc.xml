@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <context:annotation-config />
+    <!-- 本行将使Controller注解有效 -->
+    <mvc:annotation-driven />
+
+    <!-- 自动扫描top.byk.controller文件夹
+    以便注册带有@Controllers、@service、@repository、@Component等注解的类成为spring的bean -->
+    <context:component-scan base-package="top.byk.controller" />
+    <context:component-scan base-package="top.byk.service" />
+    <!--<context:component-scan base-package="top.byk.controller" />-->
+
+    <task:annotation-driven/> <!-- 定时开关 -->
+    <!-- 定义跳转的文件的前后缀,视图模式配置 -->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+
+    </bean>
+
+     <!--访问静态文件（jpg,js,css）的方法-->
+       <mvc:resources location="/WEB-INF/statics/css/" mapping="/css/**" />
+       <mvc:resources location="/WEB-INF/statics/js/" mapping="/js/**" />
+        <mvc:resources location="/WEB-INF/statics/image/" mapping="/image/**" />
+
+    <!--<bean id="exceptionHandler" class="com.holystar.advice.ExceptionAdvice"/>-->
+    <!--&lt;!&ndash;<aop:aspectj-autoproxy/>&ndash;&gt;-->
+    <!--&lt;!&ndash;配置AOP&ndash;&gt;-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="exceptionHandler">-->
+            <!--&lt;!&ndash;<aop:pointcut id="pointcut" expression="execution ( * com.holystar.controller..*.*(..))"/>&ndash;&gt;-->
+            <!--<aop:pointcut id="pointcut" expression="execution ( * top.byk..*.*(..))"/>-->
+
+            <!--&lt;!&ndash;<aop:before method="before" pointcut-ref="pointcut" />&ndash;&gt;-->
+            <!--<aop:after-throwing method="afterThrowingMethod" pointcut-ref="pointcut" throwing="ex"/>-->
+
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+</beans>
