@@ -2,12 +2,9 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 定义别名 -->
+    <!-- 此处可以定义别名 -->
     <typeAliases>
         <!--<typeAlias alias="product" type="com.holystar.entity.Product"/>-->
-
-
     </typeAliases>
-
 
 </configuration>

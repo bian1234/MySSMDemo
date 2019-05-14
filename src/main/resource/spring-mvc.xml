@@ -22,7 +22,6 @@
     以便注册带有@Controllers、@service、@repository、@Component等注解的类成为spring的bean -->
     <context:component-scan base-package="top.byk.controller" />
     <context:component-scan base-package="top.byk.service" />
-    <!--<context:component-scan base-package="top.byk.controller" />-->
 
     <task:annotation-driven/> <!-- 定时开关 -->
     <!-- 定义跳转的文件的前后缀,视图模式配置 -->
