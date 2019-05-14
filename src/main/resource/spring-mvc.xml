@@ -33,9 +33,9 @@
     </bean>
 
      <!--访问静态文件（jpg,js,css）的方法-->
-       <mvc:resources location="/WEB-INF/statics/css/" mapping="/css/**" />
-       <mvc:resources location="/WEB-INF/statics/js/" mapping="/js/**" />
-        <mvc:resources location="/WEB-INF/statics/image/" mapping="/image/**" />
+       <!--<mvc:resources location="/WEB-INF/statics/css/" mapping="/css/**" />-->
+       <!--<mvc:resources location="/WEB-INF/statics/js/" mapping="/js/**" />-->
+        <!--<mvc:resources location="/WEB-INF/statics/image/" mapping="/image/**" />-->
 
     <!--<bean id="exceptionHandler" class="com.holystar.advice.ExceptionAdvice"/>-->
     <!--&lt;!&ndash;<aop:aspectj-autoproxy/>&ndash;&gt;-->
